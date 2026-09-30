@@ -1,20 +1,281 @@
-{
-    "name": "PM-KISAN",
-    
-    "translations": {
-        "kn-IN": {
-            "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಯೋಜನೆ",
-            "benefit": "ಅರ್ಹ ರೈತ ಕುಟುಂಬಗಳಿಗೆ ವರ್ಷಕ್ಕೆ ₹6,000 ಆದಾಯ ಬೆಂಬಲ."
-        },
+[
+    {
+        "id": "pm_svanidhi",
+        "occupation": "street_vendor",
+        "minAge": 18,
+        "maxAge": 100,
+        "maxIncome": 1000000,
+        "state": "all",
 
-        "te-IN": {
-            "name": "ప్రధాన్ మంత్రి కిసాన్ పథకం",
-            "benefit": "అర్హత కలిగిన రైతు కుటుంబాలకు సంవత్సరానికి ₹6,000 ఆదాయ సహాయం."
-        },
+        "translations": {
+            "en-IN": {
+                "name": "PM SVANidhi",
+                "description": "A scheme that provides working capital loans to eligible street vendors.",
+                "benefit": "Collateral-free working capital loans in progressive tranches.",
+                "documents": [
+                    "Aadhaar Card",
+                    "Bank Account",
+                    "Certificate of Vending or Letter of Recommendation, where applicable"
+                ]
+            },
 
-        "hi-IN": {
-            "name": "प्रधानमंत्री किसान योजना",
-            "benefit": "पात्र किसान परिवारों को प्रति वर्ष ₹6,000 की आय सहायता।"
+            "kn-IN": {
+                "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಸ್ವನಿಧಿ ಯೋಜನೆ",
+                "description": "ಅರ್ಹ ಬೀದಿ ವ್ಯಾಪಾರಿಗಳಿಗೆ ಕಾರ್ಯನಿಧಿ ಸಾಲವನ್ನು ಒದಗಿಸುವ ಯೋಜನೆ.",
+                "benefit": "ಜಾಮೀನಿಲ್ಲದ ಕಾರ್ಯನಿಧಿ ಸಾಲದ ಸೌಲಭ್ಯ.",
+                "documents": [
+                    "ಆಧಾರ್ ಕಾರ್ಡ್",
+                    "ಬ್ಯಾಂಕ್ ಖಾತೆ",
+                    "ಮಾರಾಟ ಪ್ರಮಾಣಪತ್ರ ಅಥವಾ ಶಿಫಾರಸು ಪತ್ರ, ಅನ್ವಯಿಸಿದರೆ"
+                ]
+            },
+
+            "te-IN": {
+                "name": "ప్రధాన మంత్రి స్వనిధి పథకం",
+                "description": "అర్హత కలిగిన వీధి వ్యాపారులకు వర్కింగ్ క్యాపిటల్ రుణాలను అందించే పథకం.",
+                "benefit": "పూచీకత్తు లేకుండా వర్కింగ్ క్యాపిటల్ రుణ సౌకర్యం.",
+                "documents": [
+                    "ఆధార్ కార్డ్",
+                    "బ్యాంక్ ఖాతా",
+                    "వెండింగ్ సర్టిఫికేట్ లేదా సిఫార్సు పత్రం, వర్తించినప్పుడు"
+                ]
+            },
+
+            "hi-IN": {
+                "name": "प्रधानमंत्री स्वनिधि योजना",
+                "description": "पात्र स्ट्रीट वेंडरों को कार्यशील पूंजी ऋण प्रदान करने वाली योजना।",
+                "benefit": "बिना गारंटी कार्यशील पूंजी ऋण की सुविधा।",
+                "documents": [
+                    "आधार कार्ड",
+                    "बैंक खाता",
+                    "वेंडिंग प्रमाणपत्र या सिफारिश पत्र, जहाँ लागू हो"
+                ]
+            }
+        }
+    },
+
+
+    {
+        "id": "pm_vishwakarma",
+        "occupation": "tailor",
+        "minAge": 18,
+        "maxAge": 100,
+        "maxIncome": 1000000,
+        "state": "all",
+
+        "translations": {
+            "en-IN": {
+                "name": "PM Vishwakarma",
+                "description": "A scheme supporting traditional artisans and craftspeople.",
+                "benefit": "Skill training, toolkit support and credit assistance for eligible artisans.",
+                "documents": [
+                    "Aadhaar Card",
+                    "Mobile Number",
+                    "Bank Account"
+                ]
+            },
+
+            "kn-IN": {
+                "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ವಿಶ್ವಕರ್ಮ ಯೋಜನೆ",
+                "description": "ಸಾಂಪ್ರದಾಯಿಕ ಕುಶಲಕರ್ಮಿಗಳು ಮತ್ತು ಕರಕುಶಲಗಾರರಿಗೆ ಬೆಂಬಲ ನೀಡುವ ಯೋಜನೆ.",
+                "benefit": "ಕೌಶಲ್ಯ ತರಬೇತಿ, ಉಪಕರಣಗಳ ಸಹಾಯ ಮತ್ತು ಸಾಲದ ಸೌಲಭ್ಯ.",
+                "documents": [
+                    "ಆಧಾರ್ ಕಾರ್ಡ್",
+                    "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+                    "ಬ್ಯಾಂಕ್ ಖಾತೆ"
+                ]
+            },
+
+            "te-IN": {
+                "name": "ప్రధాన మంత్రి విశ్వకర్మ పథకం",
+                "description": "సంప్రదాయ కళాకారులు మరియు చేతివృత్తి నిపుణులకు మద్దతు ఇచ్చే పథకం.",
+                "benefit": "నైపుణ్య శిక్షణ, టూల్‌కిట్ సహాయం మరియు రుణ సౌకర్యం.",
+                "documents": [
+                    "ఆధార్ కార్డ్",
+                    "మొబైల్ నంబర్",
+                    "బ్యాంక్ ఖాతా"
+                ]
+            },
+
+            "hi-IN": {
+                "name": "प्रधानमंत्री विश्वकर्मा योजना",
+                "description": "पारंपरिक कारीगरों और शिल्पकारों को सहायता देने वाली योजना।",
+                "benefit": "कौशल प्रशिक्षण, टूलकिट सहायता और ऋण सुविधा।",
+                "documents": [
+                    "आधार कार्ड",
+                    "मोबाइल नंबर",
+                    "बैंक खाता"
+                ]
+            }
+        }
+    },
+
+
+    {
+        "id": "pm_kisan",
+        "occupation": "farmer",
+        "minAge": 18,
+        "maxAge": 100,
+        "maxIncome": 1000000,
+        "state": "all",
+
+        "translations": {
+            "en-IN": {
+                "name": "PM-KISAN",
+                "description": "Income support scheme for eligible landholding farmer families.",
+                "benefit": "₹6,000 per year provided in three equal installments.",
+                "documents": [
+                    "Aadhaar Card",
+                    "Land Records",
+                    "Bank Account"
+                ]
+            },
+
+            "kn-IN": {
+                "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ (PM-KISAN)",
+                "description": "ಅರ್ಹ ಭೂಹಿಡುವಳಿ ರೈತ ಕುಟುಂಬಗಳಿಗೆ ಆದಾಯ ಬೆಂಬಲ ನೀಡುವ ಯೋಜನೆ.",
+                "benefit": "ವರ್ಷಕ್ಕೆ ₹6,000 ಅನ್ನು ಮೂರು ಸಮಾನ ಕಂತುಗಳಲ್ಲಿ ನೀಡಲಾಗುತ್ತದೆ.",
+                "documents": [
+                    "ಆಧಾರ್ ಕಾರ್ಡ್",
+                    "ಭೂ ದಾಖಲೆಗಳು",
+                    "ಬ್ಯಾಂಕ್ ಖಾತೆ"
+                ]
+            },
+
+            "te-IN": {
+                "name": "ప్రధాన మంత్రి కిసాన్ సమ్మాన్ నిధి (PM-KISAN)",
+                "description": "అర్హత కలిగిన భూమి కలిగిన రైతు కుటుంబాలకు ఆదాయ సహాయం అందించే పథకం.",
+                "benefit": "సంవత్సరానికి ₹6,000 మూడు సమాన వాయిదాలలో అందించబడుతుంది.",
+                "documents": [
+                    "ఆధార్ కార్డ్",
+                    "భూమి రికార్డులు",
+                    "బ్యాంక్ ఖాతా"
+                ]
+            },
+
+            "hi-IN": {
+                "name": "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
+                "description": "पात्र भूमि धारक किसान परिवारों को आय सहायता देने वाली योजना।",
+                "benefit": "प्रति वर्ष ₹6,000 तीन समान किस्तों में दिए जाते हैं।",
+                "documents": [
+                    "आधार कार्ड",
+                    "भूमि रिकॉर्ड",
+                    "बैंक खाता"
+                ]
+            }
+        }
+    },
+
+
+    {
+        "id": "pmmsy",
+        "occupation": "fisherman",
+        "minAge": 18,
+        "maxAge": 100,
+        "maxIncome": 1000000,
+        "state": "all",
+
+        "translations": {
+            "en-IN": {
+                "name": "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
+                "description": "A fisheries-sector scheme supporting eligible fishers and fisheries beneficiaries.",
+                "benefit": "Provides various fisheries-sector support and welfare measures.",
+                "documents": [
+                    "Aadhaar Card",
+                    "Bank Account",
+                    "Fisheries-related Identification"
+                ]
+            },
+
+            "kn-IN": {
+                "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಮತ್ಸ್ಯ ಸಂಪದ ಯೋಜನೆ (PMMSY)",
+                "description": "ಅರ್ಹ ಮೀನುಗಾರರು ಮತ್ತು ಮೀನುಗಾರಿಕೆ ಕ್ಷೇತ್ರದ ಫಲಾನುಭವಿಗಳಿಗೆ ಬೆಂಬಲ ನೀಡುವ ಯೋಜನೆ.",
+                "benefit": "ಮೀನುಗಾರಿಕೆ ಕ್ಷೇತ್ರದಲ್ಲಿ ವಿವಿಧ ಬೆಂಬಲ ಮತ್ತು ಕಲ್ಯಾಣ ಸೌಲಭ್ಯಗಳು.",
+                "documents": [
+                    "ಆಧಾರ್ ಕಾರ್ಡ್",
+                    "ಬ್ಯಾಂಕ್ ಖಾತೆ",
+                    "ಮೀನುಗಾರಿಕೆ ಸಂಬಂಧಿತ ಗುರುತಿನ ದಾಖಲೆ"
+                ]
+            },
+
+            "te-IN": {
+                "name": "ప్రధాన మంత్రి మత్స్య సంపద యోజన (PMMSY)",
+                "description": "అర్హత కలిగిన మత్స్యకారులు మరియు మత్స్య రంగ లబ్ధిదారులకు మద్దతు ఇచ్చే పథకం.",
+                "benefit": "మత్స్య రంగంలో వివిధ మద్దతు మరియు సంక్షేమ సౌకర్యాలు.",
+                "documents": [
+                    "ఆధార్ కార్డ్",
+                    "బ్యాంక్ ఖాతా",
+                    "మత్స్యకార సంబంధిత గుర్తింపు పత్రం"
+                ]
+            },
+
+            "hi-IN": {
+                "name": "प्रधानमंत्री मत्स्य संपदा योजना (PMMSY)",
+                "description": "पात्र मछुआरों और मत्स्य क्षेत्र के लाभार्थियों को सहायता देने वाली योजना।",
+                "benefit": "मत्स्य क्षेत्र में विभिन्न सहायता और कल्याण सुविधाएँ।",
+                "documents": [
+                    "आधार कार्ड",
+                    "बैंक खाता",
+                    "मत्स्य पालन संबंधी पहचान पत्र"
+                ]
+            }
+        }
+    },
+
+
+    {
+        "id": "namaste",
+        "occupation": "sanitation_worker",
+        "minAge": 18,
+        "maxAge": 100,
+        "maxIncome": 1000000,
+        "state": "all",
+
+        "translations": {
+            "en-IN": {
+                "name": "NAMASTE",
+                "description": "A programme focused on safety, dignity and livelihood support for eligible sanitation workers.",
+                "benefit": "Support for occupational safety, social security and livelihood opportunities.",
+                "documents": [
+                    "Aadhaar Card",
+                    "Bank Account",
+                    "Worker Identification Details"
+                ]
+            },
+
+            "kn-IN": {
+                "name": "ನಮಸ್ತೆ ಯೋಜನೆ (NAMASTE)",
+                "description": "ಅರ್ಹ ನೈರ್ಮಲ್ಯ ಕಾರ್ಮಿಕರ ಸುರಕ್ಷತೆ, ಗೌರವ ಮತ್ತು ಜೀವನೋಪಾಯಕ್ಕೆ ಬೆಂಬಲ ನೀಡುವ ಕಾರ್ಯಕ್ರಮ.",
+                "benefit": "ವೃತ್ತಿಪರ ಸುರಕ್ಷತೆ, ಸಾಮಾಜಿಕ ಭದ್ರತೆ ಮತ್ತು ಜೀವನೋಪಾಯದ ಅವಕಾಶಗಳಿಗೆ ಬೆಂಬಲ.",
+                "documents": [
+                    "ಆಧಾರ್ ಕಾರ್ಡ್",
+                    "ಬ್ಯಾಂಕ್ ಖಾತೆ",
+                    "ಕಾರ್ಮಿಕ ಗುರುತಿನ ವಿವರಗಳು"
+                ]
+            },
+
+            "te-IN": {
+                "name": "నమస్తే పథకం (NAMASTE)",
+                "description": "అర్హత కలిగిన పారిశుధ్య కార్మికుల భద్రత, గౌరవం మరియు జీవనోపాధికి మద్దతు ఇచ్చే కార్యక్రమం.",
+                "benefit": "వృత్తిపరమైన భద్రత, సామాజిక భద్రత మరియు జీవనోపాధి అవకాశాలకు మద్దతు.",
+                "documents": [
+                    "ఆధార్ కార్డ్",
+                    "బ్యాంక్ ఖాతా",
+                    "కార్మిక గుర్తింపు వివరాలు"
+                ]
+            },
+
+            "hi-IN": {
+                "name": "नमस्ते योजना (NAMASTE)",
+                "description": "पात्र स्वच्छता कर्मचारियों की सुरक्षा, गरिमा और आजीविका के लिए सहायता देने वाला कार्यक्रम।",
+                "benefit": "व्यावसायिक सुरक्षा, सामाजिक सुरक्षा और आजीविका के अवसरों के लिए सहायता।",
+                "documents": [
+                    "आधार कार्ड",
+                    "बैंक खाता",
+                    "कर्मचारी पहचान विवरण"
+                ]
+            }
         }
     }
-}
+
+]
