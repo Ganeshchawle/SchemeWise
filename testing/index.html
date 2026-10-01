@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SchemeWise Voice Test</title>
+</head>
+
+<body>
+
+    <h2>🎤 SchemeWise Voice Test</h2>
+
+    <button onclick="startListening()">🎤 Speak</button>
+    <button onclick="speakText()">🔊 Hear Question</button>
+
+    <h3>Question:</h3>
+    <p id="question">ನಿಮ್ಮ ವಯಸ್ಸು ಎಷ್ಟು?</p>
+
+    <h3>Your Answer:</h3>
+    <p id="result">Speak your answer...</p>
+
+    <h3>Status:</h3>
+    <p id="status">Waiting...</p>
+
+<script>
+
+const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+
+recognition.lang = "kn-IN";
+recognition.continuous = false;
+recognition.interimResults = false;
+
+
+// 🎤 SPEECH TO TEXT
+function startListening() {
+
+    document.getElementById("status").innerText =
+        "🎤 Listening...";
+
+    recognition.start();
+}
+
+recognition.onresult = function(event) {
+
+    const text = event.results[0][0].transcript;
+
+    document.getElementById("result").innerText = text;
+
+    document.getElementById("status").innerText =
+        "✅ Answer received";
+
+    console.log("User said:", text);
+};
+
+
+// ❌ ERROR
+recognition.onerror = function(event) {
+
+    document.getElementById("status").innerText =
+        "❌ Error: " + event.error;
+};
+
+
+// 🔊 TEXT TO SPEECH
+function speakText() {
+
+    const question =
+        document.getElementById("question").innerText;
+
+    const speech =
+        new SpeechSynthesisUtterance(question);
+
+    speech.lang = "kn-IN";
+
+    window.speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>

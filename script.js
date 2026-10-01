@@ -1,73 +1,42 @@
-// ======================================================
-// SCHEMEWISE
-// Language + Voice + Questions + Validation + Matching
-// ======================================================
+// =====================================================
+// SCHEMEWISE - VOICE + ELIGIBILITY
+// =====================================================
 
-
-// ================= LANGUAGE DATA =================
+// ---------------- LANGUAGE ----------------
 
 const languages = {
 
     "kn-IN": {
-        name: "Kannada",
-
         questions: {
             age: "ನಿಮ್ಮ ವಯಸ್ಸು ಎಷ್ಟು?",
             occupation: "ನಿಮ್ಮ ಉದ್ಯೋಗ ಏನು?",
             income: "ನಿಮ್ಮ ಮಾಸಿಕ ಆದಾಯ ಎಷ್ಟು?",
             state: "ನೀವು ಯಾವ ರಾಜ್ಯದಲ್ಲಿ ವಾಸಿಸುತ್ತೀರಿ?"
-        },
-
-        messages: {
-            listening: "🎤 ಕೇಳುತ್ತಿದೆ...",
-            accepted: "✅ ಉತ್ತರ ಸ್ವೀಕರಿಸಲಾಗಿದೆ",
-            invalid: "❌ ಉತ್ತರ ಅರ್ಥವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಉತ್ತರಿಸಿ.",
-            noMatch: "ನೀವು ನೀಡಿದ ಮಾಹಿತಿಗೆ ಹೊಂದುವ ಯಾವುದೇ ಯೋಜನೆ ಕಂಡುಬಂದಿಲ್ಲ."
         }
     },
 
-
     "te-IN": {
-        name: "Telugu",
-
         questions: {
             age: "మీ వయస్సు ఎంత?",
             occupation: "మీ వృత్తి ఏమిటి?",
             income: "మీ నెలవారీ ఆదాయం ఎంత?",
             state: "మీరు ఏ రాష్ట్రంలో నివసిస్తున్నారు?"
-        },
-
-        messages: {
-            listening: "🎤 వింటోంది...",
-            accepted: "✅ సమాధానం స్వీకరించబడింది",
-            invalid: "❌ సమాధానం అర్థం కాలేదు. దయచేసి మళ్లీ చెప్పండి.",
-            noMatch: "మీరు ఇచ్చిన సమాచారానికి సరిపడే పథకం కనుగొనబడలేదు."
         }
     },
 
-
     "hi-IN": {
-        name: "Hindi",
-
         questions: {
             age: "आपकी उम्र कितनी है?",
             occupation: "आपका व्यवसाय क्या है?",
             income: "आपकी मासिक आय कितनी है?",
             state: "आप किस राज्य में रहते हैं?"
-        },
-
-        messages: {
-            listening: "🎤 सुन रहा है...",
-            accepted: "✅ उत्तर स्वीकार किया गया",
-            invalid: "❌ उत्तर समझ में नहीं आया। कृपया फिर से उत्तर दें।",
-            noMatch: "दी गई जानकारी के आधार पर कोई मिलती-जुलती योजना नहीं मिली।"
         }
     }
 
 };
 
 
-// ================= VARIABLES =================
+// ---------------- VARIABLES ----------------
 
 let selectedLanguage = "kn-IN";
 
@@ -77,100 +46,152 @@ let attempts = 0;
 
 const maxAttempts = 5;
 
-let schemes = [];
-
-let schemesLoaded = false;
-
-
 let userData = {
-
     age: null,
-
     occupation: "",
-
     income: null,
-
     state: ""
-
 };
 
 
 const questionKeys = [
-
     "age",
     "occupation",
     "income",
     "state"
+];
+
+
+// =====================================================
+// SCHEMES
+// =====================================================
+
+// We keep a backup copy here so the app will still work
+// even if schemes.json has a loading problem.
+
+const schemes = [
+
+    {
+        name: "PM SVANidhi",
+        occupation: "street_vendor",
+        minAge: 18,
+        maxAge: 100,
+        maxIncome: 1000000,
+        state: "all",
+        benefit:
+            "Collateral-free working capital loans for eligible street vendors.",
+        documents: [
+            "Aadhaar Card",
+            "Bank Account",
+            "Certificate of Vending or Letter of Recommendation, where applicable"
+        ]
+    },
+
+    {
+        name: "PM Vishwakarma",
+        occupation: "tailor",
+        minAge: 18,
+        maxAge: 100,
+        maxIncome: 1000000,
+        state: "all",
+        benefit:
+            "Skill training, toolkit incentive and credit support for eligible traditional artisans.",
+        documents: [
+            "Aadhaar Card",
+            "Mobile Number",
+            "Bank Account"
+        ]
+    },
+
+    {
+        name: "PM-KISAN",
+        occupation: "farmer",
+        minAge: 18,
+        maxAge: 100,
+        maxIncome: 1000000,
+        state: "all",
+        benefit:
+            "Income support of ₹6,000 per year in three equal installments for eligible farmer families.",
+        documents: [
+            "Aadhaar Card",
+            "Land Records",
+            "Bank Account"
+        ]
+    },
+
+    {
+        name: "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
+        occupation: "fisherman",
+        minAge: 18,
+        maxAge: 100,
+        maxIncome: 1000000,
+        state: "all",
+        benefit:
+            "Support for eligible fishers and fisheries-sector beneficiaries.",
+        documents: [
+            "Aadhaar Card",
+            "Bank Account",
+            "Fisheries-related identification, where applicable"
+        ]
+    },
+
+    {
+        name: "NAMASTE",
+        occupation: "sanitation_worker",
+        minAge: 18,
+        maxAge: 100,
+        maxIncome: 1000000,
+        state: "all",
+        benefit:
+            "Support for safety, dignity, social security and livelihood opportunities for eligible sanitation workers.",
+        documents: [
+            "Aadhaar Card",
+            "Bank Account",
+            "Worker identification details"
+        ]
+    }
 
 ];
 
 
-// ================= SPEECH RECOGNITION =================
+// =====================================================
+// SPEECH RECOGNITION
+// =====================================================
 
 const SpeechRecognition =
     window.SpeechRecognition ||
     window.webkitSpeechRecognition;
 
+let recognition = null;
 
-if (!SpeechRecognition) {
+if (SpeechRecognition) {
+
+    recognition = new SpeechRecognition();
+
+    recognition.continuous = false;
+
+    recognition.interimResults = false;
+
+} else {
 
     alert(
-        "Speech Recognition is not supported. Please use Google Chrome."
+        "Please use Google Chrome for voice input."
     );
 
 }
 
 
-const recognition = new SpeechRecognition();
-
-recognition.continuous = false;
-
-recognition.interimResults = false;
-
-
-// ================= LOAD SCHEMES =================
-
-fetch("schemes.json")
-
-    .then(function(response) {
-
-        if (!response.ok) {
-
-            throw new Error("schemes.json could not be loaded");
-
-        }
-
-        return response.json();
-
-    })
-
-    .then(function(data) {
-
-        schemes = data;
-
-        schemesLoaded = true;
-
-        console.log("✅ Schemes loaded:", schemes);
-
-    })
-
-    .catch(function(error) {
-
-        console.error("❌ Scheme loading error:", error);
-
-        document.getElementById("status").innerText =
-            "❌ Unable to load scheme data.";
-
-    });
-
-
-// ================= LANGUAGE SELECTION =================
+// =====================================================
+// LANGUAGE SELECTION
+// =====================================================
 
 function selectLanguage(language) {
 
     selectedLanguage = language;
 
-    recognition.lang = language;
+    if (recognition) {
+        recognition.lang = language;
+    }
 
     document.getElementById("languageScreen").style.display =
         "none";
@@ -183,11 +204,12 @@ function selectLanguage(language) {
     attempts = 0;
 
     askCurrentQuestion();
-
 }
 
 
-// ================= ASK QUESTION =================
+// =====================================================
+// ASK QUESTION
+// =====================================================
 
 function askCurrentQuestion() {
 
@@ -196,19 +218,16 @@ function askCurrentQuestion() {
         finishQuestions();
 
         return;
-
     }
 
-
     attempts++;
-
 
     const key =
         questionKeys[currentQuestion];
 
-
     const question =
-        languages[selectedLanguage].questions[key];
+        languages[selectedLanguage]
+        .questions[key];
 
 
     document.getElementById("questionNumber").innerText =
@@ -233,51 +252,44 @@ function askCurrentQuestion() {
         "Speak your answer...";
 
 
-    document.getElementById("status").innerText =
-        "🔊 Speaking question...";
-
-
     speakQuestion(question);
-
 }
 
 
-// ================= TEXT TO SPEECH =================
+// =====================================================
+// TEXT TO SPEECH
+// =====================================================
 
 function speakQuestion(text) {
 
     window.speechSynthesis.cancel();
 
-
     const speech =
         new SpeechSynthesisUtterance(text);
-
 
     speech.lang =
         selectedLanguage;
 
-
     speech.rate = 0.9;
 
-
-    speech.onend = function() {
+    speech.onend = function () {
 
         document.getElementById("status").innerText =
             "🎤 Your turn to speak.";
 
     };
 
-
     window.speechSynthesis.speak(speech);
-
 }
 
 
-// ================= HEAR QUESTION =================
+// =====================================================
+// HEAR QUESTION BUTTON
+// =====================================================
 
 document
     .getElementById("speakQuestionButton")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
 
         const question =
             document.getElementById("question").innerText;
@@ -287,99 +299,100 @@ document
     });
 
 
-// ================= START LISTENING =================
+// =====================================================
+// SPEAK ANSWER BUTTON
+// =====================================================
 
 document
     .getElementById("listenButton")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
 
-        startListening();
+        if (!recognition) {
+            return;
+        }
+
+        recognition.lang =
+            selectedLanguage;
+
+        document.getElementById("status").innerText =
+            "🎤 Listening...";
+
+        try {
+
+            recognition.start();
+
+        } catch (error) {
+
+            console.log(error);
+
+        }
 
     });
 
 
-function startListening() {
+// =====================================================
+// SPEECH RESULT
+// =====================================================
 
-    recognition.lang =
-        selectedLanguage;
+if (recognition) {
+
+    recognition.onresult = function (event) {
+
+        const text =
+            event.results[0][0].transcript;
 
 
-    document.getElementById("status").innerText =
-        languages[selectedLanguage].messages.listening;
+        console.log("USER SAID:", text);
 
 
-    try {
+        document.getElementById("result").innerText =
+            text;
 
-        recognition.start();
 
-    }
+        validateAnswer(text);
 
-    catch(error) {
+    };
 
-        console.log(error);
 
-    }
+    recognition.onerror = function (event) {
+
+        console.log(
+            "Speech error:",
+            event.error
+        );
+
+        handleInvalidAnswer();
+
+    };
 
 }
 
 
-// ================= SPEECH RESULT =================
-
-recognition.onresult = function(event) {
-
-    const text =
-        event.results[0][0].transcript;
-
-
-    console.log("🎤 User said:", text);
-
-
-    document.getElementById("result").innerText =
-        text;
-
-
-    validateAnswer(text);
-
-};
-
-
-// ================= SPEECH ERROR =================
-
-recognition.onerror = function(event) {
-
-    console.log("Speech error:", event.error);
-
-    handleInvalidAnswer();
-
-};
-
-
-// ================= VALIDATE ANSWER =================
+// =====================================================
+// VALIDATE ANSWER
+// =====================================================
 
 function validateAnswer(text) {
 
     const key =
         questionKeys[currentQuestion];
 
-
     let valid = false;
 
     let value = null;
 
 
-    // ================= AGE =================
+    // ---------- AGE ----------
 
     if (key === "age") {
 
         const numbers =
             text.match(/\d+/);
 
-
         if (numbers) {
 
             value =
                 Number(numbers[0]);
-
 
             if (
                 value >= 1 &&
@@ -395,7 +408,7 @@ function validateAnswer(text) {
     }
 
 
-    // ================= OCCUPATION =================
+    // ---------- OCCUPATION ----------
 
     if (key === "occupation") {
 
@@ -403,14 +416,10 @@ function validateAnswer(text) {
             text.toLowerCase();
 
 
-        // FARMER
-
         if (
             lower.includes("farmer") ||
             lower.includes("ರೈತ") ||
-            lower.includes("ರೈತರು") ||
             lower.includes("రైతు") ||
-            lower.includes("రైత") ||
             lower.includes("किसान")
         ) {
 
@@ -420,8 +429,6 @@ function validateAnswer(text) {
 
         }
 
-
-        // STREET VENDOR
 
         else if (
             lower.includes("street vendor") ||
@@ -438,8 +445,6 @@ function validateAnswer(text) {
         }
 
 
-        // TAILOR
-
         else if (
             lower.includes("tailor") ||
             lower.includes("ದರ್ಜಿ") ||
@@ -455,15 +460,12 @@ function validateAnswer(text) {
         }
 
 
-        // FISHERMAN
-
         else if (
             lower.includes("fisherman") ||
             lower.includes("fish") ||
             lower.includes("ಮೀನುಗಾರ") ||
             lower.includes("ಮೀನು") ||
             lower.includes("మత్స్యకారుడు") ||
-            lower.includes("చేపలు") ||
             lower.includes("मछुआरा")
         ) {
 
@@ -474,11 +476,8 @@ function validateAnswer(text) {
         }
 
 
-        // SANITATION WORKER
-
         else if (
             lower.includes("sanitation") ||
-            lower.includes("sanitary") ||
             lower.includes("ಸಫಾಯಿ") ||
             lower.includes("ಸ್ವಚ್ಛತಾ") ||
             lower.includes("శానిటేషన్") ||
@@ -494,32 +493,26 @@ function validateAnswer(text) {
     }
 
 
-    // ================= INCOME =================
+    // ---------- INCOME ----------
 
     if (key === "income") {
 
         const numbers =
             text.match(/\d+/);
 
-
         if (numbers) {
 
             value =
                 Number(numbers[0]);
 
-
-            if (value >= 0) {
-
-                valid = true;
-
-            }
+            valid = true;
 
         }
 
     }
 
 
-    // ================= STATE =================
+    // ---------- STATE ----------
 
     if (key === "state") {
 
@@ -538,27 +531,26 @@ function validateAnswer(text) {
     }
 
 
-    // ================= VALID =================
+    // ---------- VALID ----------
 
     if (valid) {
 
-        userData[key] = value;
+        userData[key] =
+            value;
 
 
         console.log(
-            "✅ Accepted:",
+            "ACCEPTED:",
             key,
             value
         );
 
 
         document.getElementById("status").innerText =
-            languages[selectedLanguage]
-            .messages
-            .accepted;
+            "✅ Answer accepted";
 
 
-        setTimeout(function() {
+        setTimeout(function () {
 
             currentQuestion++;
 
@@ -571,7 +563,7 @@ function validateAnswer(text) {
     }
 
 
-    // ================= INVALID =================
+    // ---------- INVALID ----------
 
     else {
 
@@ -582,19 +574,19 @@ function validateAnswer(text) {
 }
 
 
-// ================= INVALID ANSWER =================
+// =====================================================
+// INVALID ANSWER
+// =====================================================
 
 function handleInvalidAnswer() {
 
     document.getElementById("status").innerText =
-        languages[selectedLanguage]
-        .messages
-        .invalid;
+        "❌ Answer not understood. Please try again.";
 
 
     if (attempts < maxAttempts) {
 
-        setTimeout(function() {
+        setTimeout(function () {
 
             askCurrentQuestion();
 
@@ -611,17 +603,17 @@ function handleInvalidAnswer() {
 }
 
 
-// ================= MANUAL FALLBACK =================
+// =====================================================
+// MANUAL FALLBACK
+// =====================================================
 
 function showManualFallback() {
 
     document.getElementById("manualArea").style.display =
         "block";
 
-
     document.getElementById("manualInput").value =
         "";
-
 
     document.getElementById("status").innerText =
         "Please enter your answer manually.";
@@ -629,20 +621,20 @@ function showManualFallback() {
 }
 
 
-// ================= MANUAL SUBMIT =================
+// =====================================================
+// MANUAL SUBMIT
+// =====================================================
 
 document
     .getElementById("manualSubmit")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
 
         const text =
             document.getElementById("manualInput").value;
 
 
         if (text.trim() === "") {
-
             return;
-
         }
 
 
@@ -652,23 +644,22 @@ document
 
         attempts = 0;
 
-
         validateAnswer(text);
 
     });
 
 
-// ================= FINISH QUESTIONS =================
+// =====================================================
+// FINISH QUESTIONS
+// =====================================================
 
 function finishQuestions() {
 
-    console.log("======================");
-
-    console.log("ALL USER INFORMATION");
+    console.log(
+        "========== FINAL USER DATA =========="
+    );
 
     console.log(userData);
-
-    console.log("======================");
 
 
     document.getElementById("questionNumber").innerText =
@@ -691,12 +682,17 @@ function finishQuestions() {
         "none";
 
 
+    // IMPORTANT:
+    // Directly run matching.
+
     findSchemes();
 
 }
 
 
-// ================= FIND SCHEMES =================
+// =====================================================
+// FIND ELIGIBLE SCHEMES
+// =====================================================
 
 function findSchemes() {
 
@@ -704,59 +700,36 @@ function findSchemes() {
         document.getElementById("results");
 
 
-    // Wait for schemes.json
-
-    if (!schemesLoaded) {
-
-        results.innerHTML = `
-            <h2>⏳ Loading schemes...</h2>
-            <p>Please wait...</p>
-        `;
-
-
-        setTimeout(function() {
-
-            findSchemes();
-
-        }, 1000);
-
-
-        return;
-
-    }
-
-
     const age =
         Number(userData.age);
-
 
     const occupation =
         userData.occupation;
 
-
     const income =
         Number(userData.income);
-
 
     const state =
         userData.state;
 
 
-    console.log("FINAL DATA:");
+    console.log("================================");
 
-    console.log("Age:", age);
+    console.log("AGE:", age);
 
-    console.log("Occupation:", occupation);
+    console.log("OCCUPATION:", occupation);
 
-    console.log("Income:", income);
+    console.log("INCOME:", income);
 
-    console.log("State:", state);
+    console.log("STATE:", state);
+
+    console.log("================================");
 
 
-    // ================= MATCH =================
+    // ---------------- MATCH ----------------
 
     const matches =
-        schemes.filter(function(scheme) {
+        schemes.filter(function (scheme) {
 
             const ageMatch =
                 age >= scheme.minAge &&
@@ -776,6 +749,16 @@ function findSchemes() {
                 scheme.state === "all";
 
 
+            console.log(
+                scheme.name,
+                "=>",
+                ageMatch,
+                incomeMatch,
+                occupationMatch,
+                stateMatch
+            );
+
+
             return (
                 ageMatch &&
                 incomeMatch &&
@@ -786,10 +769,15 @@ function findSchemes() {
         });
 
 
-    console.log("MATCHING SCHEMES:", matches);
+    console.log(
+        "MATCHES:",
+        matches
+    );
 
 
-    // ================= RESULTS =================
+    // =================================================
+    // MATCH FOUND
+    // =================================================
 
     if (matches.length > 0) {
 
@@ -797,11 +785,7 @@ function findSchemes() {
 
             <h2>🟢 Potential Schemes</h2>
 
-            <p>
-                Based on the information provided:
-            </p>
-
-            ${matches.map(function(scheme) {
+            ${matches.map(function (scheme) {
 
                 return `
 
@@ -822,17 +806,15 @@ function findSchemes() {
 
                         <ul>
 
-                            ${
-                                scheme.documents
-                                .map(function(doc) {
+                            ${scheme.documents
+                                .map(function (doc) {
 
                                     return `
                                         <li>${doc}</li>
                                     `;
 
                                 })
-                                .join("")
-                            }
+                                .join("")}
 
                         </ul>
 
@@ -848,16 +830,21 @@ function findSchemes() {
 
             }).join("")}
 
+
         `;
 
 
-        // ================= SPEAK RESULT =================
+        document.getElementById("status").innerText =
+            "✅ Scheme matching completed.";
+
+
+        // -------- SPEAK RESULT --------
 
         let speechText =
             "Potential schemes found. ";
 
 
-        matches.forEach(function(scheme) {
+        matches.forEach(function (scheme) {
 
             speechText +=
                 scheme.name +
@@ -882,14 +869,12 @@ function findSchemes() {
             speech
         );
 
-
-        document.getElementById("status").innerText =
-            "✅ Scheme matching completed.";
-
     }
 
 
-    // ================= NO MATCH =================
+    // =================================================
+    // NO MATCH
+    // =================================================
 
     else {
 
@@ -910,26 +895,70 @@ function findSchemes() {
         `;
 
 
-        const speech =
-            new SpeechSynthesisUtterance(
-                languages[selectedLanguage]
-                .messages
-                .noMatch
-            );
-
-
-        speech.lang =
-            selectedLanguage;
-
-
-        window.speechSynthesis.speak(
-            speech
-        );
-
-
         document.getElementById("status").innerText =
             "No matching scheme found.";
+
+
+        speakInSelectedLanguage(voiceText);
 
     }
 
 }
+// =====================================================
+// SPEAK RESULT IN SELECTED LANGUAGE
+// =====================================================
+
+function speakInSelectedLanguage(text) {
+
+    window.speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    speech.lang = selectedLanguage;
+
+    speech.rate = 0.85;
+    speech.pitch = 1;
+
+    const voices = window.speechSynthesis.getVoices();
+
+    // Find voice for selected language
+    let selectedVoice = voices.find(function(voice) {
+
+        return voice.lang
+            .toLowerCase()
+            .startsWith(selectedLanguage.toLowerCase());
+
+    });
+
+    // Use matching language voice
+    if (selectedVoice) {
+
+        speech.voice = selectedVoice;
+
+        console.log(
+            "Using voice:",
+            selectedVoice.name,
+            selectedVoice.lang
+        );
+
+    } else {
+
+        console.log(
+            "No exact language voice found."
+        );
+
+    }
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+// Load voices
+window.speechSynthesis.onvoiceschanged = function() {
+
+    console.log(
+        "Available voices:",
+        window.speechSynthesis.getVoices()
+    );
+
+};

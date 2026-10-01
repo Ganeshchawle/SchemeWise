@@ -1,0 +1,456 @@
+/* =====================================================
+   SCHEMEWISE - MINIMAL GOVTECH UI
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy: #163A5F;
+    --teal: #159A9C;
+    --sky: #E8F4F8;
+    --background: #F7FAFC;
+    --text: #1F2937;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+    --success: #DFF3E4;
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+
+body {
+    padding: 0;
+}
+
+#languageScreen,
+#appScreen {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HEADINGS
+   ===================================================== */
+
+h1,
+h2,
+h3 {
+    color: var(--navy);
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+
+/* =====================================================
+   PARAGRAPHS
+   ===================================================== */
+
+p {
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   LANGUAGE SCREEN
+   ===================================================== */
+
+#languageScreen {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#languageScreen h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+#languageScreen p {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   LANGUAGE BUTTONS
+   ===================================================== */
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.language-buttons button {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(22, 58, 95, 0.06);
+}
+
+.language-buttons button:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    box-shadow: 0 8px 20px rgba(21, 154, 156, 0.12);
+}
+
+
+/* =====================================================
+   APP SCREEN
+   ===================================================== */
+
+#appScreen {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+#appScreen > h1 {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+#appScreen > p {
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   QUESTION CARD
+   ===================================================== */
+
+#questionNumber {
+    display: inline-block;
+    background: var(--sky);
+    color: var(--navy);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#question {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--navy);
+    box-shadow: 0 5px 18px rgba(22, 58, 95, 0.05);
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   VOICE BUTTONS
+   ===================================================== */
+
+#listenButton {
+    background: var(--teal);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(21, 154, 156, 0.2);
+}
+
+#listenButton:hover {
+    background: #128486;
+    box-shadow: 0 8px 20px rgba(21, 154, 156, 0.25);
+}
+
+#speakQuestionButton {
+    background: white;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+    padding: 13px 22px;
+    border-radius: 12px;
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#speakQuestionButton:hover {
+    background: var(--sky);
+}
+
+
+/* =====================================================
+   RECOGNIZED ANSWER
+   ===================================================== */
+
+#result {
+    margin-top: 25px;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 12px;
+    color: var(--text);
+    min-height: 55px;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+#status {
+    margin-top: 14px;
+    padding: 12px 16px;
+    color: var(--navy);
+    background: var(--sky);
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   ATTEMPT
+   ===================================================== */
+
+#attempt {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   RESULTS
+   ===================================================== */
+
+#results {
+    margin-top: 45px;
+}
+
+#results > h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   SCHEME CARD
+   ===================================================== */
+
+.scheme-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(22, 58, 95, 0.06);
+    transition: all 0.25s ease;
+}
+
+.scheme-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(22, 58, 95, 0.1);
+    border-color: #CFE3E8;
+}
+
+.scheme-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.scheme-card p {
+    margin: 10px 0;
+}
+
+.scheme-card b {
+    color: var(--navy);
+}
+
+
+/* =====================================================
+   DOCUMENT LIST
+   ===================================================== */
+
+.scheme-card ul {
+    margin: 10px 0 18px 20px;
+}
+
+.scheme-card li {
+    margin: 6px 0;
+    color: var(--text);
+}
+
+
+/* =====================================================
+   SUCCESS / ELIGIBILITY
+   ===================================================== */
+
+.scheme-card p:last-child {
+    background: var(--success);
+    color: #276749;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   MANUAL FALLBACK
+   ===================================================== */
+
+#manualArea {
+    margin-top: 20px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+#manualInput {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+#manualInput:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(21, 154, 156, 0.1);
+}
+
+#manualSubmit {
+    background: var(--navy);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+input,
+select {
+    font-family: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    #appScreen {
+        padding: 25px 16px 45px;
+    }
+
+    #appScreen > h1 {
+        font-size: 2rem;
+    }
+
+    #languageScreen {
+        margin: 40px auto;
+        padding: 20px 16px;
+    }
+
+    #languageScreen h1 {
+        font-size: 2.3rem;
+    }
+
+    .language-buttons {
+        flex-direction: column;
+    }
+
+    .language-buttons button {
+        width: 100%;
+    }
+
+    #question {
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+
+    #listenButton,
+    #speakQuestionButton {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    .scheme-card {
+        padding: 20px;
+    }
+
+}
