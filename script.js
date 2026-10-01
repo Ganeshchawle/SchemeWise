@@ -104,23 +104,23 @@ const schemes = [
     },
 
     {
-        name: "PM-KISAN",
+        name: "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
         occupation: "farmer",
         minAge: 18,
         maxAge: 100,
         maxIncome: 1000000,
         state: "all",
         benefit:
-            "Income support of ₹6,000 per year in three equal installments for eligible farmer families.",
+            "प्रति वर्ष ₹6,000 तीन समान किस्तों में दिए जाते हैं।",
         documents: [
-            "Aadhaar Card",
-            "Land Records",
-            "Bank Account"
+            "आधार कार्ड",
+                    "भूमि रिकॉर्ड",
+                    "बैंक खाता"
         ]
     },
 
     {
-        name: "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
+        name: "प्रधानमंत्री मत्स्य संपदा योजना (PMMSY)",
         occupation: "fisherman",
         minAge: 18,
         maxAge: 100,

@@ -8,16 +8,7 @@
         "state": "all",
 
         "translations": {
-            "en-IN": {
-                "name": "PM SVANidhi",
-                "description": "A scheme that provides working capital loans to eligible street vendors.",
-                "benefit": "Collateral-free working capital loans in progressive tranches.",
-                "documents": [
-                    "Aadhaar Card",
-                    "Bank Account",
-                    "Certificate of Vending or Letter of Recommendation, where applicable"
-                ]
-            },
+            
 
             "kn-IN": {
                 "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಸ್ವನಿಧಿ ಯೋಜನೆ",
@@ -64,16 +55,7 @@
         "state": "all",
 
         "translations": {
-            "en-IN": {
-                "name": "PM Vishwakarma",
-                "description": "A scheme supporting traditional artisans and craftspeople.",
-                "benefit": "Skill training, toolkit support and credit assistance for eligible artisans.",
-                "documents": [
-                    "Aadhaar Card",
-                    "Mobile Number",
-                    "Bank Account"
-                ]
-            },
+
 
             "kn-IN": {
                 "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ವಿಶ್ವಕರ್ಮ ಯೋಜನೆ",
@@ -100,8 +82,8 @@
             "hi-IN": {
                 "name": "प्रधानमंत्री विश्वकर्मा योजना",
                 "description": "पारंपरिक कारीगरों और शिल्पकारों को सहायता देने वाली योजना।",
-                "benefit": "कौशल प्रशिक्षण, टूलकिट सहायता और ऋण सुविधा।",
-                "documents": [
+                "फ़ायदा": "कौशल प्रशिक्षण, टूलकिट सहायता और ऋण सुविधा।",
+                "दस्तावेज़": [
                     "आधार कार्ड",
                     "मोबाइल नंबर",
                     "बैंक खाता"
@@ -120,16 +102,6 @@
         "state": "all",
 
         "translations": {
-            "en-IN": {
-                "name": "PM-KISAN",
-                "description": "Income support scheme for eligible landholding farmer families.",
-                "benefit": "₹6,000 per year provided in three equal installments.",
-                "documents": [
-                    "Aadhaar Card",
-                    "Land Records",
-                    "Bank Account"
-                ]
-            },
 
             "kn-IN": {
                 "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ (PM-KISAN)",
@@ -176,16 +148,7 @@
         "state": "all",
 
         "translations": {
-            "en-IN": {
-                "name": "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
-                "description": "A fisheries-sector scheme supporting eligible fishers and fisheries beneficiaries.",
-                "benefit": "Provides various fisheries-sector support and welfare measures.",
-                "documents": [
-                    "Aadhaar Card",
-                    "Bank Account",
-                    "Fisheries-related Identification"
-                ]
-            },
+            
 
             "kn-IN": {
                 "name": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಮತ್ಸ್ಯ ಸಂಪದ ಯೋಜನೆ (PMMSY)",
@@ -232,17 +195,7 @@
         "state": "all",
 
         "translations": {
-            "en-IN": {
-                "name": "NAMASTE",
-                "description": "A programme focused on safety, dignity and livelihood support for eligible sanitation workers.",
-                "benefit": "Support for occupational safety, social security and livelihood opportunities.",
-                "documents": [
-                    "Aadhaar Card",
-                    "Bank Account",
-                    "Worker Identification Details"
-                ]
-            },
-
+           
             "kn-IN": {
                 "name": "ನಮಸ್ತೆ ಯೋಜನೆ (NAMASTE)",
                 "description": "ಅರ್ಹ ನೈರ್ಮಲ್ಯ ಕಾರ್ಮಿಕರ ಸುರಕ್ಷತೆ, ಗೌರವ ಮತ್ತು ಜೀವನೋಪಾಯಕ್ಕೆ ಬೆಂಬಲ ನೀಡುವ ಕಾರ್ಯಕ್ರಮ.",
