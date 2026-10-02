@@ -104,7 +104,7 @@ const schemes = [
     },
 
     {
-        name: "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
+        name: "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN SCHEME)",
         occupation: "farmer",
         minAge: 18,
         maxAge: 100,
